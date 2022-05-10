@@ -1,0 +1,2477 @@
+/*--------------------------------------------------------------
+ *# General
+ *--------------------------------------------------------------
+*,
+*:before,
+*:after
+  padding: 0
+  margin: 0
+  border: 0
+  box-sizing: border-box
+
+body
+  height: 100%
+  font-family: "Open Sans", sans-serif
+  color: #ffffff
+  background-color: #353535
+
+.main-background
+  background: url("../img/hero.png") top center no-repeat
+  background-size: cover
+
+.wrap
+  max-width: 1400px
+  margin: 0 auto
+
+a
+  color: #bb0f0f
+  text-decoration: none
+
+  &:hover
+    color: #bb0f0f
+    text-decoration: none
+
+h1, h2, h3, h4, h5, h6
+  font-family: "Open Sans", sans-serif
+
+/*--------------------------------------------------------------
+ *# Sections General
+ *--------------------------------------------------------------
+// .container
+//   max-width: 1400px
+section
+  padding: 60px 0
+  overflow: hidden
+  position: relative  
+
+.section-dark
+  padding: 120px 0
+  color: #fff
+
+  &:before
+    content: ""
+    position: absolute
+    background: #242424
+    bottom: 50px
+    top: 50px
+    left: 0
+    right: 0
+
+.section-title
+  text-align: center
+  padding: 0 7% 30px 7%
+  position: relative
+  @media ( min-width: 992px )
+    padding: 0 20% 30px 20%
+
+  h2
+    font-size: 32px
+    font-weight: bold
+    text-transform: uppercase
+    margin-bottom: 20px
+    padding-bottom: 20px
+    position: relative  
+
+    &::after
+      content: ''
+      position: absolute
+      display: block
+      width: 50px
+      height: 3px
+      background: #bb0f0f
+      bottom: 0
+      left: calc(50% - 25px)
+
+  p
+    margin-bottom: 0
+
+/*--------------------------------------------------------------
+ *# Back to top button
+ *--------------------------------------------------------------
+
+.back-to-top
+  position: fixed
+  visibility: hidden
+  opacity: 0
+  right: 0
+  bottom: 15px
+  z-index: 996
+  background: #000000a9
+  width: 40px
+  height: 40px
+  border-radius: 4px
+  transition: all 0.4s
+  @media (max-width: 767.98px)
+    left: 0
+  i
+    font-size: 28px
+    color: #fff
+    line-height: 0
+    transition: 0.4s
+  @media (min-width: 767.98px)
+    &:hover
+      width: 55px
+      i
+        color: #bb0f0f
+        transition: .4s
+
+  &.active
+    visibility: visible
+    opacity: 1
+
+.text-call
+  position: fixed
+  right: 0
+  bottom: 10px
+  z-index: 996
+  background: #000000a9
+  width: 40px
+  height: 40px
+  border-radius: 4px
+  transition: all 0.4s
+  @media (max-width: 767.98px)
+    left: 0
+  i
+    color: #fff
+    font-size: 20px
+    line-height: 0
+    transition: 0.4s
+  @media (min-width: 767.98px)
+    &:hover
+      width: 55px
+      i
+        color: #bb0f0f
+        transition: .4s
+
+.back-call
+  margin-bottom: 225px
+
+.youtube
+  margin-bottom: 170px
+
+.instagramm
+  margin-bottom: 115px
+
+.facebook
+  margin-bottom: 60px
+
+/*--------------------------------------------------------------
+ *# Disable aos animation delay on mobile devices
+ *--------------------------------------------------------------
+@media screen and (max-width: 768px)
+  [data-aos-delay]
+    transition-delay: 0 !important
+
+/*--------------------------------------------------------------
+ *# Header
+ *--------------------------------------------------------------
+
+#header
+  background-color: #353535
+  transition: all 0.5s
+  z-index: 997
+  padding: 0
+  box-shadow: 0px 0px 8px #000
+  &.header-scrolled
+    padding: 0
+    box-shadow: 0px 8px 8px #000
+
+  .logo
+    img
+      max-height: 60px
+      padding: 0
+  .round
+    background-color: #bb0f0f
+    box-shadow: 0px 2px 5px #000
+    border: 1px solid #bb0f0f
+    width: 40px
+    color: red
+    padding: 8px
+    &:hover
+      background-color: #000000
+      a
+        color: #ffffff
+    .language
+      color: #fff600
+      border-radius: 5px
+      &:hover
+        color: #ffffff
+  .top-nav
+    list-style: none
+    margin-bottom: -1.2rem
+    margin-top: -0.5rem
+    .dropdown-menu
+      border: 2px solid #2b2a2a
+      border-radius: 3px
+      background: #bb0f0f
+      box-shadow: 10px 10px 7px #000000
+      transition: 0.4s
+    a
+      color: #fff600      
+    .dropdown-item
+      color: #fff
+      &:hover
+        background-color: #bb0f0f
+        color: #000
+
+/*--------------------------------------------------------------
+ *# Navigation Menu
+ *--------------------------------------------------------------
+/**
+ ** Desktop Navigation
+
+.navbar
+  padding: 0
+  background-color: #353535
+
+  ul
+    margin: 0
+    padding: 0
+    display: flex
+    list-style: none
+    align-items: center
+
+  li
+    position: relative
+
+  a
+    display: flex
+    align-items: center
+    justify-content: space-between
+    padding: 10px 0 10px 30px
+    font-family: "Raleway", sans-serif
+    font-size: 15px
+    font-weight: 600
+    color: #ffffff
+    white-space: nowrap
+    transition: 0.4s
+
+    i
+      font-size: 12px
+      line-height: 0
+      margin-left: 5px
+
+    &:hover
+      color: #bb0f0f
+
+  .active, li:hover > a
+    color: #bb0f0f
+
+
+  .dropdown
+    ul
+      display: block
+      position: absolute
+      left: -100px
+      top: calc(100% + 30px)
+      margin: 0
+      padding: 10px 0
+      z-index: 99
+      opacity: 0
+      visibility: hidden
+      border: 2px solid #2b2a2a
+      border-radius: 3px
+      background: #bb0f0f
+      box-shadow: 10px 10px 7px #000000
+      transition: 0.4s
+
+      li
+        min-width: 200px
+
+      a
+        padding: 10px 20px
+        font-size: 16px
+
+        i
+          font-size: 12px
+
+        &:hover
+          color: #000
+
+      .active:hover, li:hover > a
+        color: #000
+
+    &:hover > ul
+      opacity: 1
+      top: 100%
+      visibility: visible
+
+    .dropstart
+      ul
+        top: -100px
+        left: calc(100% - 30px)
+        visibility: hidden
+
+      &:hover > ul
+        opacity: 1
+        top: 0
+        left: 100%
+        visibility: visible
+
+@media (max-width: 1366px)
+  .navbar .dropdown .dropdown
+    ul
+      left: -90%
+
+    &:hover > ul
+      left: -100%
+
+/**
+ ** Mobile Navigation
+
+.mobile-nav-toggles
+  color: #bb0f0f
+  font-size: 50px
+  cursor: pointer
+  display: none
+  line-height: 0
+  transition: 0.5s
+
+  &.bi-x
+    color: #bb0f0f
+
+@media (max-width: 991px)
+  .mobile-nav-toggles
+    display: block
+
+  .navbar ul
+    display: none
+
+/*--------------------------------------------------------------
+ *# Mobile Navigation
+ *--------------------------------------------------------------
+
+.mobile-nav-toggle
+  color: #bb0f0f
+  font-size: 50px
+  cursor: pointer
+  display: none
+  line-height: 0
+  transition: 0.5s
+  // margin-left: 85%
+
+  &.bi-x
+    color: #bb0f0f
+    margin-left: 82%
+
+@media (max-width: 991px)
+  .mobile-nav-toggle
+    display: block
+
+  .navbar ul
+    display: none
+
+.navbar-mobile
+  position: fixed
+  overflow: hidden
+  top: 0
+  right: 0
+  left: 0
+  bottom: 0
+  background: rgba(0, 0, 0, 0.9)
+  transition: 0.3s
+  z-index: 999
+
+  .mobile-nav-toggle
+    position: absolute
+    top: 15px
+    left: 15px
+
+  ul
+    display: block
+    position: absolute
+    top: 55px
+    right: 15px
+    bottom: 15px
+    left: 15px
+    padding: 10px 0
+    background-color: #353535
+    overflow-y: auto
+    transition: 0.3s
+
+  a
+    padding: 10px 20px
+    font-size: 16px
+    color: #ffffff
+    @media (min-width: 768px)
+      font-size: 20px
+
+  .getstarted
+    margin: 15px
+
+  .dropdown
+    ul
+      position: static
+      display: none
+      margin: 10px 20px
+      padding: 10px 0
+      z-index: 99
+      opacity: 1
+      visibility: visible
+      background: #bb0f0f
+      box-shadow: #000000 0 0 10px 5px
+
+      li
+        min-width: 200px
+
+      a
+        padding: 10px 20px
+        font-size: 10px
+        @media (min-width: 370px)
+          font-size: 13px
+        @media (min-width: 768px)
+          font-size: 16px
+
+        i
+          font-size: 12px
+
+        &:hover
+          color: #bb0f0f
+
+      // .active:hover, li:hover > a
+      //   color: #bb0f0f
+
+    > .dropdown-active
+      display: block
+
+/*--------------------------------------------------------------
+ *# Головна
+ *--------------------------------------------------------------
+
+.main-hero
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  padding: 20px 0
+  margin-top: 40px
+  @media ( min-width: 992px )
+    flex-direction: row-reverse
+    justify-content: space-between
+  .main-hero-images
+    @media ( min-width: 992px )
+      margin: 30% 5% 0 0
+    @media ( min-width: 1400px )
+      margin: 35% 12% 0 0
+
+    .yellow-square
+      width: 60%
+      height: 250px
+      background: #fff600
+      box-shadow: #000000 0 0 10px 5px
+      margin: -60% auto 0 auto
+      padding-bottom: 8%
+      display: flex
+      flex-direction: column
+      justify-content: space-between
+      align-items: center
+      @media ( min-width: 360px )
+        height: 330px
+      @media ( min-width: 400px )
+        height: 370px
+      @media ( min-width: 460px )
+        height: 450px
+      @media ( min-width: 576px )
+        height: 520px
+      @media ( min-width: 690px )
+        height: 560px
+      @media ( min-width: 768px )
+        height: 650px
+      @media ( min-width: 868px )
+        height: 750px
+      @media ( min-width: 992px )
+        width: 80%
+        height: 370px
+        margin-top: -65%
+      @media ( min-width: 1200px )
+        width: 100%
+        height: 500px
+        margin-top: -80%
+      .main-hero-btn-box
+        margin-bottom: -5%
+        @media ( min-width: 992px )
+          display: none
+        .hero-btn
+          font-family: "Raleway", sans-serif
+          font-weight: 500
+          font-size: 14px
+          letter-spacing: 1px
+          display: inline-block
+          padding: 3px 8px
+          border: 3px solid #bb0f0f
+          border-radius: 40px
+          transition: 0.6s
+          color: #fff
+          background: #353535
+          text-align: center
+          box-shadow: 0 0 8px #000
+          &:hover
+            background: #bb0f0f
+            color: #fff 
+          @media ( min-width: 768px )
+            padding: 10px 20px
+            font-size: 18px
+            
+    .comercial-square
+      img
+        width: 72%
+        margin: 3% 0 0 35%
+        box-shadow: #000000 0 0 10px 5px
+        @media ( min-width: 992px )
+          width: 80%
+          margin-top: 0%
+        @media ( min-width: 1200px )
+          width: 100% 
+    .home-square
+      img
+        width: 72%
+        margin: -25% 0 0 0
+        box-shadow: #000000 0 0 10px 5px
+        @media ( min-width: 992px )
+          width: 80%
+          margin-left: -15%
+          margin-top: -30%
+        @media ( min-width: 1200px )
+          width: 100%
+          margin-left: -25%
+  .main-hero-text
+    display: flex
+    flex-direction: column
+    @media ( min-height: 800px )
+      margin-top: 18%
+    @media ( min-width: 576px )
+      margin-top: 0
+    @media ( min-width: 992px )
+      margin: 5% 0 0 5%
+      max-width: 45%
+    .main-hero-title
+      margin-top: 10%
+      margin-left: 10%
+      @media (min-width: 450px)
+        margin-top: 7%
+      @media ( min-width: 768px )
+        margin-top: 5% 
+      .main-title
+        font-size: 30px
+        font-weight: 700
+        color: #fff
+        text-shadow: 0px 0px 2px #000
+        //text-align: center
+        line-height: 90%
+        @media (min-width: 450px)
+          font-size: 40px
+        @media (min-width: 576px)
+          font-size: 46px
+        @media ( min-width: 768px )
+          font-size: 46px
+        @media ( min-width: 992px )
+          text-align: start
+          font-size: 36px
+        @media ( min-width: 1200px )
+          font-size: 52px
+        @media ( min-width: 1400px )
+          font-size: 60px
+        .yelow-title
+          color: #fff600
+          transition: 0.9s
+      .main-subtitle
+        color: #bb0f0f
+        margin-top: 4% 
+        font-size: 20px
+        font-weight: bold
+        //text-align: center
+        text-shadow: 0px 0px 2px #000
+        @media ( min-height: 800px )
+          margin-top: 5%
+        @media (min-width: 450px)
+          font-size: 26px
+        @media (min-width: 576px)
+          font-size: 30px
+        @media ( min-width: 768px )
+          font-size: 32px
+        @media ( min-width: 992px )
+          text-align: start
+          margin-top: 3%
+          font-size: 24px
+        @media ( min-width: 1200px )
+          font-size: 30px
+        @media ( min-width: 1400px )
+          font-size: 32px
+      .hero-text-btn
+        font-family: "Raleway", sans-serif
+        font-weight: 500
+        font-size: 16px
+        letter-spacing: 1px
+        padding: 5px 0px
+        display: inline-block
+        text-align: center
+        margin-top: 5%
+        border: 3px solid #bb0f0f
+        border-radius: 40px
+        transition: 0.6s
+        color: #fff
+        background: transparent
+        box-shadow: 0 0 8px #000
+        width: 40%
+        display: none
+        &:hover
+          background: #bb0f0f
+          color: #fff 
+        @media ( min-width: 992px )
+          display: block
+        @media ( min-width: 1200px )
+          font-size: 18px
+          padding: 5px 0px
+        @media ( min-width: 1400px )
+          font-size: 20px
+          padding: 10px 0px
+    .main-hero-subtitle
+      margin-left: 10%
+      //display: none
+      @media ( min-width: 992px )
+        //display: block
+        margin-top: 20%
+      @media ( min-width: 1200px )
+        width: 70%
+      @media ( min-width: 1400px )
+        margin-top: 15%
+      .utp-title
+        margin-top: 10%
+        font-size: 24px
+        color: #ffffff
+        text-shadow: 0px 0px 2px #000
+        letter-spacing: 1px
+        line-height: 90%
+        font-weight: 600
+        @media ( min-width: 1200px )
+          margin-top: 30%
+          font-size: 24px
+        @media ( min-width: 1400px )
+          font-size: 28px
+          margin-top: 30%
+        .yelow-title
+          color: #fff600
+
+      .utp
+        font-size: 18px
+        font-weight: 400
+        @media ( min-width: 1200px )
+          font-size: 18px
+        @media ( min-width: 1400px )
+          font-size: 22px
+        i
+          color: #f3f712
+
+      .hero-text-btn
+        font-family: "Raleway", sans-serif
+        font-weight: 500
+        font-size: 16px
+        letter-spacing: 1px
+        padding: 5px 0px
+        display: inline-block
+        text-align: center
+        margin-top: 5%
+        border: 3px solid #bb0f0f
+        border-radius: 40px
+        transition: 0.6s
+        color: #fff
+        background: transparent
+        box-shadow: 0 0 8px #000
+        width: 50%
+        display: none
+        &:hover
+          background: #bb0f0f
+          color: #fff 
+        @media ( min-width: 992px )
+          display: block
+        @media ( min-width: 1200px )
+          width: 60%
+          font-size: 18px
+          padding: 5px 0px
+        @media ( min-width: 1400px )
+          width: 60%
+          font-size: 20px
+          padding: 10px 0px
+
+/*--------------------------------------------------------------
+ *# Hero Section
+ *--------------------------------------------------------------
+
+#hero
+  width: 100%
+  height: 100vh
+  background: top center no-repeat
+  background-size: cover
+  position: relative
+  padding-top: 82px
+
+  &:before
+    content: ""
+    background: rgba(0, 0, 0, 0.6)
+    position: absolute
+    bottom: 0
+    top: 0
+    left: 0
+    right: 0
+
+  h1
+    margin: 0
+    font-size: 48px
+    font-weight: 700
+    color: #fff
+    .yelow-title
+      color: #fff600
+      transition: 0.9s
+    .green-title
+      color: #0fdf0f
+  h2
+    color: #fff
+    margin: 10px 0 0 0
+    font-size: 24px
+  .main-subtitle
+    color: #bb0f0f
+    //margin-top: 4% 
+    font-size: 20px
+    font-weight: bold
+    text-align: center
+    text-shadow: 0px 0px 3px #000000
+    @media ( min-height: 800px )
+      margin-top: 5%
+    @media (min-width: 450px)
+      font-size: 26px
+    @media (min-width: 576px)
+        ont-size: 30px
+    @media ( min-width: 768px )
+      font-size: 32px
+    @media ( min-width: 992px )
+      text-align: start
+      margin-top: 3%
+      font-size: 24px
+    @media ( min-width: 1200px )
+      font-size: 30px
+    @media ( min-width: 1200px )
+      font-size: 32px
+  .btn-get-started
+    font-family: "Raleway", sans-serif
+    font-weight: 500
+    font-size: 16px
+    letter-spacing: 1px
+    display: inline-block
+    padding: 5px 30px
+    border-radius: 50px
+    transition: 0.5s
+    margin-top: 30px
+    color: #fff
+    background: #bb0f0f
+    border: 2px solid #fff
+
+    &:hover
+      background: transparent
+      border-color: #fff
+
+@media (max-width: 768px)
+  #hero
+    text-align: center
+    padding-top: 58px
+
+    h1
+      font-size: 28px
+
+    h2
+      font-size: 18px
+      line-height: 24px
+
+@media (max-height: 500px)
+  #hero
+    height: 120vh
+
+/*--------------------------------------------------------------
+ *# Послуги та товари
+ *--------------------------------------------------------------
+
+.about
+  min-height: 100vh
+  display: flex
+  flex-direction: column
+  margin-top: 0%
+  @media (min-width: 992px)
+    flex-direction: row
+    justify-content: space-between
+
+  .main-section-title
+    margin-bottom: -14%
+    text-align: center
+    z-index: 3
+    @media (min-width: 992px)
+      display: none
+    h2
+      font-size: 26px
+      font-weight: 700
+      text-shadow: 0 0 3px #000000 
+      @media (min-width: 450px)
+        font-size: 36px
+      @media (min-width: 576px)
+        font-size: 40px
+  .about-items
+    display: flex
+    .item-square
+      width: 50%
+      height: 650px
+      background: #bb0f0f
+      box-shadow: #0000008f 0 0 10px 5px
+      @media (min-width: 576px)
+        height: 800px
+      @media (min-width: 768px)
+        height: 850px
+    .item-table
+      display: flex
+      flex-direction: column
+      padding: 5px
+      margin-top: 15%
+      margin-left: -50%
+      width: 100%
+      z-index: 2
+      .table-title
+        display: inline-block
+        margin-left: 30%
+        width: 150%
+        display: none
+        @media (min-width: 992px)
+          display: block
+        h2
+          font-size: 32px
+          text-shadow: 0 0 3px #000000
+          margin-left: 15% 
+          @media ( min-width: 1200px )
+            font-size: 36px
+            font-weight: 700
+
+      .table-header
+        display: flex
+        justify-content: space-between
+        align-items: center
+        padding: 5px
+        height: 70px
+        width: 100%
+        background-color: #262626
+        box-shadow: #0000008f 0 0 10px 5px
+        z-index: 2
+        @media (min-width: 375px)
+          height: 90px
+        @media (min-width: 450px)
+          height: 100px
+        @media (min-width: 576px)
+          height: 120px
+        @media (min-width: 992px)
+          width: 120%
+          margin-left: -2%
+          margin-top: 5%
+        @media (min-width: 1400px)
+          width: 140%
+        .title
+          font-size: 14px
+          font-weight: 700
+          margin: 0
+          color: #bb0f0f
+          text-shadow: 0 0 3px #000000
+          @media (min-width: 450px)
+            font-size: 20px
+          @media (min-width: 576px)
+            font-size: 26px
+        .price
+          font-size: 22px
+          font-weight: 900
+          margin-left: 12%
+          color: #bb0f0f
+          text-shadow: 0 0 3px #000000
+          @media (min-width: 450px)
+            font-size: 26px
+          @media (min-width: 576px)
+            font-size: 32px
+      .table-body
+        background-color: #262626
+        box-shadow: #000000 0 0 10px 5px 
+        width: 90%
+        margin: 0 auto
+        z-index: 1
+        @media (min-width: 992px)
+          margin-left: 10%
+        @media (min-width: 1400px)
+          width: 110%
+        a
+          color: #fff
+        
+        i
+          font-size: 20px
+          color: #bb0f0f
+          @media (min-width: 576px)
+            font-size: 24px
+          @media (min-width: 992px)
+            font-size: 20px
+        thead
+          background-color: #323131
+          th
+            color: #fff
+            font-size: 18px
+            @media (min-width: 450px)
+              font-size: 22px
+            @media (min-width: 576px)
+              font-size: 30px
+            @media (min-width: 992px)
+              font-size: 24px
+
+        tbody
+          background-color: #262626
+          max-width: 90%
+          td, a
+            color: #fff
+            &:hover
+              color: #bb0f0f
+            @media (min-width: 450px)
+              font-size: 18px
+            @media (min-width: 576px)
+              font-size: 24px
+            @media (min-width: 992px)
+              font-size: 18px
+          .table-price
+            color: #ffffff
+            font-size: 14px
+            font-weight: 700
+            @media (min-width: 450px)
+              font-size: 22px
+            @media (min-width: 576px)
+              font-size: 24px
+
+          .go-to-shop
+            color: #bb0f0f
+            font-size: 16px
+            display: inline-block
+            margin-top: 5%
+            text-align: center
+            font-weight: 700
+            text-shadow: 0 0 2px #000000
+            @media (min-width: 450px)
+              font-size: 22px
+              margin-top: 2%
+            @media (min-width: 576px)
+              font-size: 28px
+            @media (min-width: 992px)
+              font-size: 22px
+          i
+            margin-left: 5px
+            font-size: 28px
+            @media (min-width: 576px)
+              font-size: 32px
+            @media (min-width: 992px)
+              font-size: 28px
+  .icon-boxes 
+    margin-top: 5%
+    margin-left: 5%
+    @media (min-width: 992px)
+      margin-left: 0
+      margin-top: 40%
+    .icon-box
+    span
+      display: inline-block
+      margin-top: 5%
+      color: #bb0f0f
+      text-shadow: 0 0 2px #000000
+      font-size: 18px
+      font-weight: 700
+      @media ( min-width: 450px )
+        font-size: 26px
+      @media (min-width: 576px)
+        font-size: 24px
+      @media (min-width: 992px)
+        font-size: 18px
+    
+    .square
+      margin-left: -3%
+      margin-bottom: 20px
+      padding-bottom: 30px
+      background: #252525
+      @media screen and ( min-width: 992px )
+        background: transparent
+    i
+      font-size: 60px
+      color: #bb0f0f
+      margin: 0 0 10px 8%
+      text-shadow: 0px 0px 2px #000000
+      @media (min-width: 576px)
+        font-size: 70px
+
+    h4
+      font-size: 20px
+      font-weight: 700
+      margin: 0 0 10px 8%
+      text-shadow: 0px 0px 2px #000000
+      @media ( min-width: 450px )
+        font-size: 30px
+      @media (min-width: 576px)
+        font-size: 30px
+      @media (min-width: 992px)
+        font-size: 22px
+    p
+      font-size: 14px
+      color: #ffffff
+      margin-left: 8%
+      text-shadow: 0px 0px 2px #000000
+      @media ( min-width: 450px )
+        font-size: 22px
+      @media (min-width: 576px)
+        font-size: 22px
+      @media (min-width: 992px)
+        font-size: 16px
+      i
+        margin-left: 10px
+        font-size: 16px
+        color: #bb0f0f
+        text-shadow: 0px 0px 2px #000000
+        @media (min-width: 576px)
+          font-size: 20px
+        @media (min-width: 992px)
+          font-size: 18px
+
+/*--------------------------------------------------------------
+ *# second
+ *--------------------------------------------------------------
+
+.second
+  margin-left: 7%
+  margin-right: 7%
+  .container
+    position: relative
+    z-index: 10
+
+  .content
+    padding: 30px 30px 30px 0
+
+    h3
+      font-weight: 700
+      font-size: 34px
+      margin-bottom: 30px
+
+    p
+      margin-bottom: 30px
+
+    .second-btn
+      padding: 8px 30px 9px 30px
+      color: #fff
+      border-radius: 50px
+      transition: 0.3s
+      text-transform: uppercase
+      font-weight: 600
+      font-size: 13px
+      display: inline-flex
+      align-items: center
+      border: 2px solid #bb0f0f
+
+      i
+        font-size: 16px
+        padding-left: 5px
+
+      &:hover
+        background: #bb0f0f
+
+  .icon-boxes .icon-box
+    margin-top: 30px
+
+    i
+      font-size: 40px
+      color: #bb0f0f
+      margin-bottom: 10px
+
+    h4
+      font-size: 20px
+      font-weight: 700
+      margin: 0 0 10px 0
+
+    p
+      font-size: 15px
+      color: #848484
+
+@media (max-width: 1200px)
+  .second .content
+    padding-right: 0
+
+@media (max-width: 768px)
+  .second
+    text-align: center
+
+
+/*--------------------------------------------------------------
+ *# СЕС під ключ
+ *--------------------------------------------------------------
+
+.full-konstruction
+  margin-top: -25%
+  @media ( min-width: 450px )
+    margin-top: -10%
+
+  .full-konstruction-box
+    @media ( min-width: 992px )
+      display: flex
+      flex-direction: row
+      justify-content: space-around 
+    .full-text
+      min-width: 40%
+      @media ( min-width: 992px )
+        margin-top: 10%  
+
+    .content
+      position: relative
+
+      h3
+        text-align: center
+        font-weight: 700
+        font-size: 26px
+        margin-bottom: 30px
+        color: #ffffff
+        text-shadow: 2px 2px 5px #000000
+        @media ( min-width: 450px )
+          font-size: 36px
+        @media ( min-width: 1200px )
+          font-size: 40px
+          text-align: start
+          margin-left: 7%
+
+      ul
+        margin-top: 10%
+
+      li
+        list-style: none 
+        h4
+          margin-left: 2%
+          font-size: 16px
+          font-weight: 700
+          color: #d8d7d7
+          text-shadow: 2px 2px 5px #000000
+          @media ( min-width: 450px )
+            font-size: 24px
+          span
+            color: #d8d7d7
+          a
+            color: #d8d7d7
+        i
+          font-size: 32px
+          padding-right: 10px
+          color: #bb0f0f
+          text-shadow: 0 0 18px #fff600
+          @media ( min-width: 576px )
+            font-size: 42px
+
+      .full-konstruction-btn 
+        font-family: "Raleway", sans-serif
+        font-weight: 500
+        font-size: 12px
+        letter-spacing: 1px
+        display: inline-block
+        padding: 5px 30px
+        margin-top: 10%
+        margin-left: 15%
+        border: 3px solid #bb0f0f
+        border-radius: 40px
+        transition: 0.6s
+        color: #fff
+        background: transparent
+        box-shadow: #000000 0 0 5px 3px
+        @media ( min-width: 450px )
+          font-size: 22px
+        @media ( min-width: 992px )
+          display: none
+        &:hover
+          background: #bb0f0f
+          color: #ffffff
+
+
+    .video
+      margin-top: 10%
+      padding-bottom: 7%
+      @media ( min-width: 576px )
+        margin-top: 12%
+      @media ( min-width: 992px )
+        display: flex
+        flex-direction: column-reverse
+
+      .color-square
+        background-color: #fff600
+        box-shadow: #000000 0 0 10px 5px
+        width: 70%
+        height: 150%
+        margin-left: 35%
+        margin-top: -80%
+        z-index: -1
+        display: none
+        @media ( min-width: 992px )
+          display: block
+          margin-top: -90%
+          margin-left: 55%
+          width: 45%
+          height: 500px
+        @media ( min-width: 1200px )
+          margin-left: 60%
+
+      .laptop
+        margin-left: auto
+        margin-right: auto
+        width: 100%
+        @media ( min-width: 992px )
+          margin-left: 13%
+          
+      iframe
+        position: absolute
+        width: 80%
+        height: 76%
+        margin-top: -59%
+        margin-left: -40%
+        border-radius: 7px
+        @media ( min-width: 768px )
+          margin-top: -60%
+          border-radius: 20px
+        @media ( min-width: 992px )
+          height: 39%
+          margin-top: -59%
+          margin-left: -27%
+        @media ( min-width: 1050px )
+          height: 41%
+        @media ( min-width: 1100px )
+          height: 43%
+        @media ( min-width: 1150px )
+          height: 45%
+        @media ( min-width: 1150px )
+          height: 45%
+        @media ( min-width: 1150px )
+          height: 46%
+
+
+      .full-konstruction-btn 
+        font-family: "Raleway", sans-serif
+        font-weight: 500
+        font-size: 12px
+        letter-spacing: 1px
+        display: inline-block
+        text-align: center
+        padding: 5px 10px
+        margin-top: 10%
+        margin-left: 15%
+        border: 3px solid #bb0f0f
+        border-radius: 40px
+        transition: 0.6s
+        color: #fff
+        cursor: pointer
+        background: transparent
+        box-shadow: #000000 0 0 5px 3px
+        display: none
+        @media ( min-width: 450px )
+          font-size: 22px
+        @media ( min-width: 992px )
+          display: block
+          width: 60%
+          margin-left: 30%
+        &:hover
+          background: #bb0f0f
+          color: #ffffff
+  
+/*--------------------------------------------------------------
+ *# Tabs
+ *--------------------------------------------------------------
+
+.tabs
+  .nav-tabs
+    border: 0
+
+  .nav-link
+    border: 1px solid #b9b9b9
+    padding: 15px
+    transition: 0.3s
+    color: #bb0f0f
+    box-shadow: #0000008f 0 0 10px 5px
+    border-radius: 0
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+
+    h4
+      font-size: 10px
+      font-weight: 600
+      margin: 0
+      text-align: center
+      @media ( min-width: 400px )
+        font-size: 12px
+      @media ( min-width: 768px )
+        font-size: 16px
+      @media ( min-width: 1200px )
+        font-size: 18px
+        br
+          display: none
+
+    &:hover
+      color: #bb0f0f
+
+    &.active
+      background: #bb0f0f
+      color: #fff
+      border-color: #bb0f0f
+
+  .tab-content
+    margin-top: 30px
+    li
+      list-style: none 
+      h3
+        text-align: 
+      h4
+        margin-left: 2%
+        font-size: 16px
+        font-weight: 700
+        color: #d8d7d7
+        text-shadow: 2px 2px 5px #000000
+        @media ( min-width: 450px )
+          font-size: 24px
+        span
+          color: #d8d7d7
+        a
+          color: #d8d7d7
+        i
+          font-size: 32px
+          padding-right: 10px
+          color: #bb0f0f
+          text-shadow: 0 0 18px #fff600
+          @media ( min-width: 576px )
+            font-size: 42px
+
+  .tab-pane
+    h3
+      font-weight: 600
+      font-size: 26px
+      margin-left: 7%
+
+    p
+      margin-left: 7%
+    
+    img
+      box-shadow: #0000008f 0 0 10px 5px
+
+    ul
+      list-style: none
+      padding: 0
+      margin-left: 7%
+
+      li
+        padding-bottom: 10px
+
+      i
+        font-size: 20px
+        padding-right: 4px
+        color: #bb0f0f
+
+    p:last-child
+      margin-bottom: 0
+      margin-left: 7%
+
+@media (max-width: 768px)
+  .tabs .nav-link i
+    padding: 0
+    line-height: 1
+    font-size: 36px
+
+@media (max-width: 575px)
+  .tabs .nav-link
+    padding: 15px
+
+    i
+      font-size: 24px
+
+/*--------------------------------------------------------------
+ *# СЕС для бізнесу
+ *--------------------------------------------------------------
+
+.for-business
+  margin-top: -22%
+  .for-business-title
+    text-align: center
+    padding: 5% 8%
+    @media ( min-width: 450px )
+      padding: 5% 15%
+    @media ( min-width: 768px )
+      padding-top: 15%
+    @media ( min-width: 768px )
+      padding-top: 25%
+    h2
+      font-size: 32px
+      font-weight: 600
+      color: #cccccc
+      text-shadow: 2px 2px 5px #000000
+      @media ( min-width: 450px )
+        font-size: 36px
+      @media ( min-width: 992px )
+        font-size: 40px
+      span
+        color: #fff
+        text-shadow: 2px 2px 5px #bb0f0f
+        font-weight: 700
+
+  .for-business-list
+    display: flex
+    flex-direction: column
+    align-items: center
+    @media ( min-width: 992px )
+      flex-direction: row
+      padding: 2%
+    img
+      margin: 40px
+      @media( min-width: 992px )
+        margin-left: 15%
+    p
+      text-align: center
+      padding: 0 10%
+      font-size: 30px
+      span
+        color: #fff
+        text-shadow: 2px 2px 3px #bb0f0f
+        font-weight: 600
+      @media ( min-width: 576px )
+        font-size: 32px
+      @media ( min-width: 992px )
+        text-align: start
+      .details
+        font-size: 20px
+        font-weight: 700
+        @media ( min-width: 1200px )
+          br
+            display: none
+
+  .for-business-img2
+    margin-top: 15%
+    @media ( min-width: 992px )
+      margin-top: 5%
+    img
+      width: 80%
+      margin: 0 10%
+      box-shadow: #000000 0 0 10px 5px
+      @media ( min-width: 992px )
+        width: 50%
+        margin: 0 25%
+  .for-business-img3
+    margin-top: -25%
+    @media ( min-width: 992px )
+      margin-top: -28%    
+    img
+      width: 40%
+      margin: 0 30% 0 30%
+      @media ( min-width: 992px )
+        width: 20%
+        margin: 0 auto 0 65%
+  hr
+    width: 80%
+    height: 3px
+    margin: 0 10% 0 10%
+    background: #fff
+
+
+/*--------------------------------------------------------------
+ *# Services
+ *--------------------------------------------------------------
+
+.services .icon-box
+  margin-bottom: 20px
+  padding: 30px
+  border-radius: 6px
+  background: #252525
+  transition: 0.3s
+
+  &:hover
+    background: #2b2b2b
+
+  i
+    float: left
+    color: #bb0f0f
+    font-size: 40px
+    line-height: 0
+
+  h4
+    margin-left: 70px
+    font-weight: 700
+    margin-bottom: 15px
+    font-size: 18px
+
+    a
+      color: #fff
+      transition: 0.3s
+
+      &:hover
+        text-decoration: underline
+
+  .icon-box:hover h4 a
+    color: #bb0f0f
+
+  p
+    margin-left: 70px
+    line-height: 24px
+    font-size: 14px
+
+/*--------------------------------------------------------------
+ *# Відгуки та фото галерея
+ *--------------------------------------------------------------
+
+/*--------------------------------------------------------------
+ *# Portfolio
+ *--------------------------------------------------------------
+
+.portfolio
+  // h2
+  //   color: #bb0f0f
+
+  .portfolio-item
+    margin-bottom: 30px
+
+  #portfolio-flters
+    padding: 0
+    margin: 0 auto 20px auto
+    list-style: none
+    text-align: center
+
+    li
+      cursor: pointer
+      display: inline-block
+      padding: 8px 15px 10px 15px
+      font-size: 14px
+      font-weight: 600
+      line-height: 1
+      text-transform: uppercase
+      color: #fff
+      margin-bottom: 5px
+      transition: all 0.3s ease-in-out
+      border-radius: 3px
+
+      &:hover, &.filter-active
+        color: #fff
+        background: #bb0f0f
+
+      &:last-child
+        margin-right: 0
+
+  .portfolio-wrap
+    transition: 0.3s
+    position: relative
+    overflow: hidden
+    z-index: 1
+    background: rgba(17, 17, 17, 0.6)
+    box-shadow: 3px 3px 8px #000000
+
+    &::before
+      content: ""
+      background: rgba(17, 17, 17, 0.6)
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      bottom: 0
+      transition: all ease-in-out 0.3s
+      z-index: 2
+      opacity: 0
+
+    img
+      transition: all ease-in-out 0.3s
+
+    .portfolio-info
+      opacity: 0
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      z-index: 3
+      transition: all ease-in-out 0.3s
+      display: flex
+      flex-direction: column
+      justify-content: flex-end
+      align-items: flex-start
+      padding: 20px
+
+      h4
+        font-size: 20px
+        color: #fff
+        font-weight: 600
+
+      p
+        color: rgba(255, 255, 255, 0.7)
+        font-size: 14px
+        text-transform: uppercase
+        padding: 0
+        margin: 0
+        font-style: italic
+
+    .portfolio-links
+      text-align: center
+      margin-left: 34%
+      margin-bottom: 20%
+      z-index: 4
+
+      a
+        color: #bb0f0f
+        margin: 0 5px 0 0
+        font-size: 28px
+        display: inline-block
+        transition: 0.3s
+        font-size: 60px
+        &:hover
+          color: #fff
+
+    &:hover
+      &::before
+        opacity: 1
+
+      img
+        transform: scale(1.2)
+
+      .portfolio-info
+        opacity: 1
+
+.portfolio-details
+  height: 1400px
+  margin-top: -35%
+  @media (min-width: 450px)
+    margin-top: -25%
+    height: 1500px
+  @media (min-width: 450px)
+    height: 1700px
+    margin-top: -15%
+  @media (min-width: 992px)
+    height: 950px 
+    margin-top: -12%
+  @media (min-width: 1200px)
+    margin-left: -5%
+    min-height: 1070px
+  @media (min-width: 1200px)
+    min-height: 1200px
+
+  .portfolio-details-slider
+    width: 100%
+    height: 500px
+    @media (min-width: 450px)
+      height: 670px
+    @media (min-width: 992px)
+      width: 100%
+      height: 550px
+      margin-left: 0
+    @media (min-width: 1200px)
+      min-height: 635px
+    @media (min-width: 1400px)
+      min-height: 735px
+      width: 90%
+
+
+    .color-item
+      position: relative
+      margin-top: 33%
+      width: 100%
+      height: 80%
+      padding: 25% 15%
+      background-color: #bb0f0f
+      @media (min-width: 992px)
+        width: 60%
+      @media (min-width: 992px)
+        padding: 3% 15% 5% 5%
+        width: 70%
+      @media (min-width: 1200px)
+        padding: 5% 18% 0 10%
+      @media (min-width: 1400px)
+        width: 80%
+
+      a
+        font-size: 18px
+        color: #000
+        font-style: italic
+        font-weight: 700
+        @media (min-width: 450px)
+          font-size: 24px
+        @media (min-width: 992px)
+          font-size: 18px
+
+      p
+        font-size: 16px
+        @media (min-width: 450px)
+          font-size: 22px
+        @media (min-width: 992px)
+          font-size: 16px
+
+      h3
+        margin-top: -25%
+        font-size: 22px
+        font-weight: 700
+        text-shadow: 0px 0px 3px #000000
+        @media (min-width: 450px)
+          margin-top: -15%
+          font-size: 30px
+        @media (min-width: 992px)
+          font-size: 22px
+          margin-top: -75%
+          br
+            display: none
+        @media (min-width: 1200px)
+          font-size: 34px
+          margin-top: -50%
+
+    img
+      margin-top: -90%  
+      margin-left: 35%
+      width: 75%
+      box-shadow: #000000 0 0 10px 5px
+      //border: 8px solid #ffffff
+      border-radius: 50%
+      z-index: 9
+      @media (min-width: 450px)
+        margin-top: -80%
+      @media (min-width: 992px)
+        width: 70%
+        margin-left: 94%
+        margin-top: 10%
+      @media (min-width: 1200px)
+        width: 60%
+        margin-left: 110%
+
+  .portfolio-info
+    padding: 30px
+    box-shadow: 0px 0 30px rgba(17, 17, 17, 0.08)
+
+    h3
+      font-size: 22px
+      font-weight: 700
+      margin-bottom: 20px
+      padding-bottom: 20px
+      border-bottom: 1px solid #eee
+
+    ul
+      list-style: none
+      padding: 0
+      font-size: 15px
+
+      li + li
+        margin-top: 10px
+
+  .portfolio-description
+    padding-top: 30px
+
+    h2
+      font-size: 26px
+      font-weight: 700
+      margin-bottom: 20px
+      color: #bb0f0f
+
+    p
+      padding: 0
+
+  .portfolio-box
+    width: 100%
+    margin-left: 0%
+    margin-top: -63%
+    padding: 1%
+    @media ( min-width: 576px )
+      margin-top: -50%
+    @media (min-width: 992px)
+      margin-top: -27%
+      margin-left: 35%
+      width: 80%
+    @media (min-width: 1200px)
+      margin-left: 24%
+      width: 100%
+    
+    .portfolio-container
+      .portfolio-item
+        padding: 0.1px
+        width: 33%
+        @media (min-width: 992px)
+          width: 17%
+      .hide-img
+        @media (min-width: 992px)
+          display: none
+
+      .portfolio-wrap
+        transition: 0.3s
+        position: relative
+        overflow: hidden
+        z-index: 1
+        background: rgba(17, 17, 17, 0.6)
+        box-shadow: 3px 3px 8px #000000
+        @media (min-width: 992px)
+          height: 130px
+        @media (min-width: 1200px)
+          height: 150px
+        @media (min-width: 1400px)
+          height: 170px
+
+        &::before
+          content: ""
+          background: rgba(0, 0, 0, 0.705)
+          position: absolute
+          left: 0
+          right: 0
+          top: 0
+          bottom: 0
+          transition: all ease-in-out 0.3s
+          z-index: 2
+          opacity: 1
+
+        img
+          transition: all ease-in-out 0.3s
+          border: 1px solid #fff
+          min-width: 150px
+          min-height: 150px
+
+        .portfolio-info
+          opacity: 1
+          position: absolute
+          top: 0
+          left: 0
+          right: 0
+          bottom: 0
+          z-index: 3
+          transition: all ease-in-out 0.3s
+          display: flex
+          flex-direction: column
+          justify-content: flex-end
+          align-items: flex-start
+          padding: 20px
+
+          h4
+            font-size: 20px
+            color: #fff
+            font-weight: 600
+
+          p
+            color: rgba(255, 255, 255, 0.7)
+            font-size: 14px
+            text-transform: uppercase
+            padding: 0
+            margin: 0
+            font-style: italic
+
+        .portfolio-links
+          text-align: center
+          margin-left: 34%
+          margin-bottom: 20%
+          z-index: 4
+
+          a
+            color: #666565
+            display: inline-block
+            transition: 0.3s
+            font-size: 36px
+            &:hover
+              color: #ff0000
+
+        &:hover
+          &::before
+            opacity: 0
+
+          img
+            transform: scale(1.2)
+
+          .portfolio-info
+            opacity: 1
+
+          a
+            color: #bb0f0f
+      .color-square
+        background-color: #fff600
+        box-shadow: #000000 0 0 10px 5px
+        width: 70%
+        height: 100%
+        margin-left: 21%
+        margin-top: 20%
+        z-index: 1
+        @media (min-width: 992px)
+          width: 30%
+        @media (min-width: 1200px)
+          margin-top: 15%
+
+/*--------------------------------------------------------------
+ *# Testimonials
+ *--------------------------------------------------------------
+
+.testimonials
+  .testimonial-item
+    box-sizing: content-box
+    padding: 30px
+    margin: 30px 15px
+    min-height: 200px
+    border-radius: 4px
+    border-bottom-width: 3px
+    border-bottom-style: solid
+    border-bottom-color: #bb0f0f
+    border-right-width: 3px
+    border-right-style: solid
+    border-right-color: #bb0f0f
+    box-shadow: #000000 0 0 5px 3px
+    position: relative
+    background: #2b2b2b
+
+    .testimonial-img
+      width: 90px
+      border-radius: 4px
+      
+      box-shadow: #000000 0 0 5px 3px
+      float: left
+      margin: 0 10px 0 0
+
+    h3
+      font-size: 18px
+      font-weight: bold
+      margin: 25px 0 5px 0
+      color: #bb0f0f
+
+    h4
+      font-size: 14px
+      color: #999
+      margin: 0
+
+    .quote-icon-left, .quote-icon-right
+      color: #fceaea
+      font-size: 26px
+
+    .quote-icon-left
+      display: inline-block
+      left: -5px
+      position: relative
+
+    .quote-icon-right
+      display: inline-block
+      right: -5px
+      position: relative
+      top: 10px
+
+    p
+      font-style: italic
+      margin: 30px auto 15px auto
+
+  .swiper-pagination
+    margin-top: 20px
+    position: relative
+
+    .swiper-pagination-bullet
+      width: 12px
+      height: 12px
+      background-color: #fff
+      opacity: 1
+      border: 1px solid #bb0f0f
+
+    .swiper-pagination-bullet-active
+      background-color: #bb0f0f
+
+/*--------------------------------------------------------------
+ *# Pricing
+ *--------------------------------------------------------------
+
+.pricing
+  .box
+    padding: 20px
+    background: #2b2b2b
+    box-shadow: #000000 0 0 5px 3px
+    text-align: center
+    border-radius: 8px
+    border-bottom-width: 3px
+    border-bottom-style: solid
+    border-bottom-color: #fff
+    position: relative
+    overflow: hidden
+
+    h3
+      font-weight: 400
+      padding: 15px
+      font-size: 18px
+      font-weight: 600
+
+    h4
+      font-size: 42px
+      font-weight: 500
+      font-family: "Open Sans", sans-serif
+      margin-bottom: 20px
+
+      sup
+        font-size: 20px
+        top: -15px
+        left: -3px
+
+      span
+        font-size: 16px
+        font-weight: 300
+
+    ul
+      padding: 0
+      list-style: none
+      text-align: center
+      line-height: 20px
+      font-size: 14px
+
+      li
+        padding-bottom: 16px
+        h3
+          font-weight: 700
+          font-size: 22px
+          padding: 0
+
+      i
+        color: #bb0f0f
+        font-size: 18px
+        padding-right: 4px
+
+    .btn-wrap
+      padding: 15px
+      text-align: center
+
+    .btn-buy
+      display: inline-block
+      padding: 10px 40px 12px 40px
+      border-radius: 4px
+      color: #fff
+      transition: none
+      font-size: 14px
+      font-weight: 400
+      font-family: "Raleway", sans-serif
+      font-weight: 600
+      transition: 0.3s
+      border: 2px solid rgba(255, 255, 255, 0.3)
+
+      &:hover
+        border-color: #fff
+
+  .featured
+    background: #bb0f0f
+
+/*--------------------------------------------------------------
+ *# Steps
+ *--------------------------------------------------------------
+
+.steps
+  padding-top: 20px
+
+  .row
+    overflow: hidden
+
+  .content-item
+    padding: 40px
+    border-left: 1px solid #bb0f0f
+    border-bottom: 1px solid #bb0f0f
+    margin: -1px   
+
+    span
+      display: block
+      font-size: 36px
+      font-weight: 700
+      color: #bb0f0f
+      text-shadow: 2px 2px 5px #000000
+
+    h4
+      font-size: 28px
+      font-weight: 400
+      margin: 20px 0
+      color: #d1d1d1
+
+    p
+      color: #ffffff
+      font-size: 15px
+      margin: 0
+
+    .step-list
+      list-style: none
+      cursor: pointer
+      i
+        margin-left: 20px
+        color: #bb0f0f
+      li
+        font-size: 16px
+        list-style: circle outside
+
+
+    .white-text
+      color: #bb0f0f
+      text-shadow: 2px 2px 5px #000000
+
+/*--------------------------------------------------------------
+ *# Team
+ *--------------------------------------------------------------
+
+.team .member
+  margin-bottom: 20px
+  overflow: hidden
+  border: 1px solid #313131
+  background: #292727
+  box-shadow: #222222 0 0 10px 5px
+
+  .member-img
+    position: relative
+    overflow: hidden
+
+  .social
+    position: absolute
+    left: 0
+    bottom: 30px
+    right: 0
+    transition: ease-in-out 0.3s
+    display: flex
+    align-items: center
+    justify-content: center
+
+    a
+      transition: color 0.3s
+      color: #111111
+      margin: 0 3px
+      border-radius: 50px
+      width: 36px
+      height: 36px
+      background: #bb0f0f
+      display: inline-flex
+      align-items: center
+      justify-content: center
+      transition: ease-in-out 0.3s
+      color: #fff
+
+      &:hover
+        background: #111111
+
+    i
+      font-size: 18px
+      line-height: 0
+
+  .member-info
+    padding: 25px 15px
+
+    h4
+      font-weight: 700
+      margin-bottom: 5px
+      font-size: 18px
+      color: #fff
+
+    span
+      display: block
+      font-size: 13px
+      font-weight: 400
+      color: #aaaaaa
+
+    p
+      font-size: 14px
+      line-height: 26px
+      color: #ffffff
+
+  &:hover .social
+    bottom: 15px
+
+/*--------------------------------------------------------------
+ *# Запитання та відповіді
+ *--------------------------------------------------------------
+
+.faq 
+  margin-top: -10%
+  @media screen and ( min-width: 768px )
+    margin-top: -5%
+  @media screen and ( min-width: 1400px )
+    margin-top: 5%
+
+  .title
+    @media screen and ( min-width: 768px )
+      width: 70%
+      margin: 0 auto
+    @media screen and ( min-width: 1200px )
+      width: 50%
+    h2
+      text-align: center
+      font-weight: 700
+      font-size: 32px
+      margin-bottom: 30px
+      color: #ffffff
+      text-shadow: 2px 2px 5px #000000 
+      @media ( min-width: 450px )
+        font-size: 36px
+      @media ( min-width: 992px )
+        font-size: 40px 
+  .faq-list
+    margin-top: 20%
+    margin-left: 8%
+    padding: 0
+    list-style: none
+    color: #bb0f0f
+    @media screen and ( min-width: 768px )
+      margin-top: 10%
+
+  li
+    border-bottom: 2px solid #000000
+    margin-bottom: 20px
+    padding-bottom: 20px
+
+  a
+    display: block
+    position: relative
+    font-family: #bb0f0f
+    font-size: 18px
+    line-height: 24px
+    font-weight: 400
+    color:  #bb0f0f
+    text-shadow: 2px 2px 8px #000
+    padding-right: 25px
+    cursor: pointer
+
+  i
+    font-size: 24px
+    position: absolute
+    right: 0
+    top: 0
+    color: #bb0f0f
+
+  p
+    color: #fff
+    margin-bottom: 0
+    padding: 10px 0 0 0
+    text-shadow: 2px 2px 5px #000000
+
+  .icon-show
+    display: none
+
+  a.collapsed
+    color: #ffffff
+
+    &:hover
+      color: #bb0f0f
+
+    .icon-show
+      display: inline-block
+
+    .icon-close
+      display: none
+
+.faq
+  h2
+    text-align: center
+    color: #bb0f0f
+    text-shadow: 2px 2px 5px #000000
+    margin-bottom: 3%
+
+// --------------------------------------------------------------
+// Projects
+// --------------------------------------------------------------
+.projects-section 
+  margin: -5rem 0 
+  z-index: 2
+  @media ( min-width: 992px )
+    margin: -1rem 0
+  .row
+    box-shadow: #222222 0 0 10px 5px
+  .title 
+    margin-top: 20%
+    @media ( min-width: 992px )
+      margin-top: 0
+  h2
+    font-size: 32px
+    font-weight: 600
+    text-transform: uppercase
+    text-shadow: 2px 2px 5px #000000
+    padding: 0px 5% 15% 5%
+    @media ( min-width: 992px )
+      padding: 20px 25% 5% 25%
+  .main-text
+    color: #e7e7e7
+    text-shadow: 2px 2px 5px #000000
+    font-size: 16px
+  .apple
+    margin-left: 2rem
+  .android
+    margin-right: 2rem
+  .project
+    background: linear-gradient(45deg, #000000, #bb0f0f)
+
+  .solar-fon 
+    background: linear-gradient(55deg, #000000, #bb0f0f)
+    box-shadow: #222222 0 0 10px 5px
+    .featured-text 
+      padding: 2rem
+      h4
+        font-size: 26px
+        font-weight: 600
+        color: #e7e7e7
+        text-shadow: 2px 2px 5px #000000
+        margin-bottom: 10px
+  .project-text 
+    padding: 2rem
+    font-size: 90%
+    li
+      list-style: circle
+      text-align: start
+      margin-left: -4%
+    h4
+      font-size: 26px
+      font-weight: 600
+      color: #e7e7e7
+      text-shadow: 2px 2px 5px #000000
+      margin-bottom: 10px
+    .tel
+      margin-top: 10px
+      list-style: none
+      font-weight: 600
+  hr 
+    border-color: #ffffff
+    border-width: 0.25rem
+    width: 40%
+    height: 2px
+  iframe
+    width: 100%
+    height: 420px
+
+/*--------------------------------------------------------------
+ *# features-icons
+ *--------------------------------------------------------------
+.features-icons
+  margin-top: -3%
+  margin-left: 5%
+  @media (min-width: 992px)
+    margin-left: 0 
+  h2
+    margin-right: 5%
+    font-size: 32px
+    font-weight: 600
+    text-transform: uppercase
+    text-shadow: 2px 2px 5px #000000  
+    @media (min-width: 992px)
+      margin-right: 0 
+  .features-icons-item
+    padding: 15px
+
+// --------------------------------------------------------------------------
+// Showcase
+// --------------------------------------------------------------------------
+
+.showcase 
+  padding-top: 0
+  .title
+    text-align: center
+    font-size: 32px
+    font-weight: 600
+    margin-top: 20%
+    margin-bottom: 16%
+    text-transform: uppercase
+    text-shadow: 2px 2px 5px #000000 
+    @media (min-width: 992px)
+      margin-top: 5%
+      margin-bottom: 8%
+  .showcase-text 
+    padding: 1rem 1rem 1rem 2.5rem
+    background: linear-gradient(55deg, #000000, #bb0f0f)  
+    @media (min-width: 992px)
+      padding: 3rem 
+    h2
+      margin-right: 5%
+      font-weight: 600
+      text-transform: uppercase
+      text-shadow: 2px 2px 5px #000000 
+    p
+      font-size: 16px
+      @media (min-width: 992px)
+        font-size: 18px 
+    li
+      list-style: circle
+      margin-left: -4%
+
+  .showcase-img 
+    min-height: 30rem
+    background-size: cover 
+
+.sun-chardger
+  @media (min-width: 992px)
+    max-width: 40%         
+
+// /*--------------- Контакти -----------------------------------------------
+
+.contacts
+  iframe
+    width: 100%
+    height: 360px
+    box-shadow: 3px 3px 8px #000
+    @media (min-width: 992px)
+      margin-top: 0
+      margin-bottom: 20px    
+  .info-box
+    color: #000000
+    text-align: center
+    box-shadow: 3px 3px 8px #000000
+    padding: 30px 0 32px 0
+    border-radius: 4px
+    border: 1px solid #fff
+    transition: 0.5s
+    &:hover
+      transition: 0.5s
+      box-shadow: 5px 5px 5px 2px #000
+      border: 1px solid #fff
+
+    .btn-road 
+      margin-top: 20px
+      background-color: transparent
+      border: none
+      border: 2px solid #bb0f0f
+      box-shadow: 5px 5px 5px #000
+      &:hover
+        border: 2px solid #fff
+
+    i
+      font-size: 32px
+      color: #bb0f0f
+      border-radius: 50%
+      padding: 8px
+      border: 2px dotted #f8d4d5
+
+    h3
+      font-size: 20px
+      color: #bb0f0f
+      text-shadow: 2px 2px 2px #000000
+      font-weight: 700
+      margin: 10px 0
+
+    p
+      padding: 0
+      line-height: 24px
+      font-size: 14px
+      margin-bottom: 0
+      color: #fff
+      text-shadow: 2px 2px 5px #000000
+
+    a
+      color: #fff
+      transition: 0.6s
+      &:hover
+        transition: 0.6s
+        background-color:  #bb0f0f
+        color: #fff
+    hr
+      height: 2px
+      background-color: #fff
+
+  img
+    height: 400px
+    width: 100%
+    margin-top: 30px
+    box-shadow: 3px 3px 8px #000
+
+@-webkit-keyframes animate-loading
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+@keyframes animate-loading
+  0%
+    transform: rotate(0deg)
+
+  100%
+    transform: rotate(360deg)
+
+.copyright
+  color: #4d4c4c
+.credits
+  color: #4d4c4c
+  a
+    color: #4d4c4c
+
+
+
+
+
+
+
